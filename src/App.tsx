@@ -17,7 +17,7 @@ export const App = ()=> {
           <Routes>
             <Route path={'/page_one'} element={<PageOne/>}/>
             <Route path={'/page_two'} element={<PageTwo/>}/>
-            <Route path={'/page_thee'} element={<PageThree/>}/>
+            <Route path={'/page_three'} element={<PageThree/>}/>
           </Routes>
         </div>
       </div>
