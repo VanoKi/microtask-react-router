@@ -1,5 +1,5 @@
 import styles from "./components/Site.module.css";
-import {Route, Routes} from "react-router-dom";
+import {Navigate, Route, Routes} from "react-router-dom";
 import {PageOne} from "./components/pages/PageOne.tsx";
 import {PageTwo} from "./components/pages/PageTwo.tsx";
 import {PageThree} from "./components/pages/PageThree.tsx";
@@ -14,12 +14,15 @@ export const App = ()=> {
           Здесь будет навигация
         </div>
         <div className={styles.content}>
-          Здесь будут кроссовки
+          {/*Здесь будут кроссовки*/}
           <Routes>
+            {/*<Route  path={'/page_one'} element={<Navigate to={'/page_one'}/> }/>*/}
             <Route path={'/page_one'} element={<PageOne/>}/>
             <Route path={'/page_two'} element={<PageTwo/>}/>
             <Route path={'/page_three'} element={<PageThree/>}/>
-            <Route path={'/*'} element={<Error404/>}/>
+
+            <Route path={'/error404'} element={<Error404/>}/>
+            <Route path={'/*'} element={<Navigate to={'/error404'}/>}/>
           </Routes>
         </div>
       </div>
