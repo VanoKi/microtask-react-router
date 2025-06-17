@@ -1,5 +1,5 @@
 import styles from "./components/Site.module.css";
-import {Navigate, Route, Routes} from "react-router-dom";
+import {Navigate, NavLink, Route, Routes} from "react-router-dom";
 import {PageOne} from "./components/pages/PageOne.tsx";
 import {PageTwo} from "./components/pages/PageTwo.tsx";
 import {PageThree} from "./components/pages/PageThree.tsx";
@@ -11,18 +11,20 @@ export const App = ()=> {
       <div className={styles.header}><h1>HEADER</h1></div>
       <div className={styles.body}>
         <div className={styles.nav}>
-          Здесь будет навигация
+          <div> <NavLink to={'/page_one'}> Adidas </NavLink></div>
+          <div> <NavLink to={'/page_two'}> Puma </NavLink></div>
+          <div> <NavLink to={'/page_three'}> Abibas </NavLink></div>
         </div>
         <div className={styles.content}>
           {/*Здесь будут кроссовки*/}
           <Routes>
-            {/*<Route  path={'/page_one'} element={<Navigate to={'/page_one'}/> }/>*/}
+            <Route  path={'/'} element={<Navigate to={'/page_one'}/> }/>
             <Route path={'/page_one'} element={<PageOne/>}/>
             <Route path={'/page_two'} element={<PageTwo/>}/>
             <Route path={'/page_three'} element={<PageThree/>}/>
 
             <Route path={'/error404'} element={<Error404/>}/>
-            <Route path={'/*'} element={<Navigate to={'/error404'}/>}/>
+            <Route path={'*'} element={<Navigate to={'/error404'}/>}/>
           </Routes>
         </div>
       </div>
