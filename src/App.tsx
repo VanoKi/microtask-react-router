@@ -1,4 +1,5 @@
 import styles from "./components/Site.module.css";
+import {Route, Routes} from "react-router-dom";
 import {PageOne} from "./components/pages/PageOne.tsx";
 import {PageTwo} from "./components/pages/PageTwo.tsx";
 import {PageThree} from "./components/pages/PageThree.tsx";
@@ -13,9 +14,11 @@ export const App = ()=> {
         </div>
         <div className={styles.content}>
           Здесь будут кроссовки
-          <PageOne/>
-          <PageTwo/>
-          <PageThree/>
+          <Routes>
+            <Route path={'/page_one'} element={<PageOne/>}/>
+            <Route path={'/page_two'} element={<PageTwo/>}/>
+            <Route path={'/page_thee'} element={<PageThree/>}/>
+          </Routes>
         </div>
       </div>
       <div className={styles.footer}>abibas 2023</div>
