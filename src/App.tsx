@@ -1,5 +1,5 @@
 import styles from "./components/Site.module.css";
-import {Navigate, NavLink, Route, Routes} from "react-router-dom";
+import {Link, Navigate, NavLink, Route, Routes} from "react-router-dom";
 import {PageOne} from "./components/pages/PageOne.tsx";
 import {PageTwo} from "./components/pages/PageTwo.tsx";
 import {PageThree} from "./components/pages/PageThree.tsx";
@@ -11,7 +11,9 @@ export const App = ()=> {
       <div className={styles.header}><h1>HEADER</h1></div>
       <div className={styles.body}>
         <div className={styles.nav}>
-          <div> <NavLink to={'/page_one'}> Adidas </NavLink></div>
+          <div className={'nav'}> <NavLink to={'/page_one'}
+          className={({isActive}) => isActive ? 'activeNavLink' : 'navLink'}
+          > Adidas </NavLink></div>
           <div> <NavLink to={'/page_two'}> Puma </NavLink></div>
           <div> <NavLink to={'/page_three'}> Abibas </NavLink></div>
         </div>
