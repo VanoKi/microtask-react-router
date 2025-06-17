@@ -6,16 +6,18 @@ import {PageThree} from "./components/pages/PageThree.tsx";
 import {Error404} from "./components/pages/Error404.tsx";
 
 export const App = ()=> {
+  const getClassName = ({isActive} : {isActive:boolean}) => {
+    return isActive ? styles.activeNavLink : styles.navLink
+  }
+
   return (
     <div>
       <div className={styles.header}><h1>HEADER</h1></div>
       <div className={styles.body}>
         <div className={styles.nav}>
-          <div className={'nav'}> <NavLink to={'/page_one'}
-          className={({isActive}) => isActive ? 'activeNavLink' : 'navLink'}
-          > Adidas </NavLink></div>
-          <div> <NavLink to={'/page_two'}> Puma </NavLink></div>
-          <div> <NavLink to={'/page_three'}> Abibas </NavLink></div>
+          <div> <NavLink to={'/page_one'} className={getClassName}> Adidas </NavLink></div>
+          <div> <NavLink to={'/page_two'} className={getClassName}> Puma </NavLink></div>
+          <div> <NavLink to={'/page_three'} className={getClassName}> Abibas </NavLink></div>
         </div>
         <div className={styles.content}>
           {/*Здесь будут кроссовки*/}
