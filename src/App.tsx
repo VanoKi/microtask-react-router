@@ -1,6 +1,6 @@
 import styles from "./components/Site.module.css";
 import {Link, Navigate, NavLink, Route, Routes} from "react-router-dom";
-import {PageOne} from "./components/pages/Adidas.tsx";
+import {Adidas, PageOne} from "./components/pages/Adidas.tsx";
 import {Puma} from "./components/pages/Puma.tsx";
 import {Abibas} from "./components/pages/Abibas.tsx";
 import {Error404} from "./components/pages/Error404.tsx";
@@ -30,7 +30,7 @@ export const App = ()=> {
           {/*Здесь будут кроссовки*/}
           <Routes>
             <Route  path={'/'} element={<Navigate to={PATH.PAGE1}/> }/>
-            <Route path={PATH.PAGE1} element={<PageOne/>}/>
+            <Route path={PATH.PAGE1} element={<Adidas/>}/>
             <Route path={PATH.PAGE2} element={<Puma/>}/>
             <Route path={PATH.PAGE3} element={<Abibas/>}/>
 
